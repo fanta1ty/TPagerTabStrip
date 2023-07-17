@@ -22,7 +22,7 @@ let package = Package(
                 "FXPageControl"
             ],
             exclude: [
-                "Objc"
+                "ObjC"
             ]
         ),
         .testTarget(
