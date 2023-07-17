@@ -39,8 +39,8 @@
                 <constraint firstItem="s7f-rk-sQl" firstAttribute="centerX" secondItem="zg4-fX-zUF" secondAttribute="centerX" id="c15-bZ-hPG"/>
             </constraints>
             <connections>
-                <outlet property="imageView" destination="tFG-yJ-6Th" id="Odb-dR-tf4"/>
-                <outlet property="label" destination="s7f-rk-sQl" id="4gU-tb-BMB"/>
+                <outlet property="imageView" destination="tFG-yJ-6Th" id="5DS-5A-E94"/>
+                <outlet property="label" destination="s7f-rk-sQl" id="g0e-s0-G0n"/>
             </connections>
             <point key="canvasLocation" x="307" y="541"/>
         </collectionViewCell>
