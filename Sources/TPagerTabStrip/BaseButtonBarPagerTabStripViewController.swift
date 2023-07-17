@@ -302,13 +302,12 @@ open class ExampleBaseButtonBarPagerTabStripViewController: BaseButtonBarPagerTa
             var bundle = Bundle.module
         #else
             var bundle = Bundle(for: ButtonBarViewCell.self)
-        #endif
-
-        if let resourcePath = bundle.path(forResource: "TPagerTabStrip", ofType: "bundle") {
-            if let resourcesBundle = Bundle(path: resourcePath) {
-                bundle = resourcesBundle
+            if let resourcePath = bundle.path(forResource: "TPagerTabStrip", ofType: "bundle") {
+                if let resourcesBundle = Bundle(path: resourcePath) {
+                    bundle = resourcesBundle
+                }
             }
-        }
+        #endif
 
         buttonBarItemSpec = .nibFile(nibName: "ButtonCell", bundle: bundle, width: { [weak self] childItemInfo -> CGFloat in
             let label = UILabel()
