@@ -1,10 +1,9 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var postName: UILabel!
-    @IBOutlet weak var postText: UILabel!
+    @IBOutlet var userImage: UIImageView!
+    @IBOutlet var postName: UILabel!
+    @IBOutlet var postText: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +21,8 @@ class PostCell: UITableViewCell {
     func changeStylToBlack() {
         userImage?.layer.cornerRadius = 30.0
         postText.text = nil
-        postName.font = UIFont(name: "HelveticaNeue-Light", size:18) ?? .systemFont(ofSize: 18)
+        postName.font = UIFont(name: "HelveticaNeue-Light", size: 18) ?? .systemFont(ofSize: 18)
         postName.textColor = .white
-        backgroundColor = UIColor(red: 15/255.0, green: 16/255.0, blue: 16/255.0, alpha: 1.0)
+        backgroundColor = UIColor(red: 15 / 255.0, green: 16 / 255.0, blue: 16 / 255.0, alpha: 1.0)
     }
 }

@@ -13,17 +13,13 @@ class DataProvider {
 }
 
 class NavController: UINavigationController {
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
-
 }
 
 class TabBarController: UITabBarController {
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
-
 }

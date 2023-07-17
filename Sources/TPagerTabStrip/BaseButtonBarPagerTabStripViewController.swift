@@ -89,7 +89,7 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
         super.viewDidLayoutSubviews()
 
         guard isViewAppearing || isViewRotating else { return }
-        
+
         cachedCellWidths = calculateWidths()
         buttonBarView.collectionViewLayout.invalidateLayout()
         buttonBarView.moveTo(index: currentIndex, animated: false, swipeDirection: .none, pagerScroll: .scrollOnlyIfOutOfScreen)

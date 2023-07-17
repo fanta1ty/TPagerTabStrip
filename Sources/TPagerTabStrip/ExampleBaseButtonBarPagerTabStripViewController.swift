@@ -45,4 +45,3 @@ open class ExampleBaseButtonBarPagerTabStripViewController: BaseButtonBarPagerTa
         }
     }
 }
-
