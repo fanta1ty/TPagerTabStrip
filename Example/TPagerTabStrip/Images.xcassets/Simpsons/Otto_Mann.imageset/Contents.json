@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Otto_Mann.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
