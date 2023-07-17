@@ -1,8 +1,7 @@
-import UIKit
 import TPagerTabStrip
+import UIKit
 
 class ReloadExampleViewController: UIViewController {
-
     @IBOutlet lazy var titleLabel: UILabel! = {
         let label = UILabel()
         return label
@@ -30,7 +29,8 @@ class ReloadExampleViewController: UIViewController {
         }
     }
 
-    @IBAction func reloadTapped(_ sender: UIBarButtonItem) {
+    @IBAction
+    func reloadTapped(_: UIBarButtonItem) {
         for childViewController in childViewControllers {
             guard let child = childViewController as? PagerTabStripViewController else {
                 continue
@@ -41,13 +41,14 @@ class ReloadExampleViewController: UIViewController {
         }
     }
 
-    @IBAction func closeTapped(_ sender: UIButton) {
+    @IBAction
+    func closeTapped(_: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
     func updateTitle(of pagerTabStripViewController: PagerTabStripViewController) {
         func stringFromBool(_ bool: Bool) -> String {
-            return bool ? "YES" : "NO"
+            bool ? "YES" : "NO"
         }
 
         titleLabel.text = "Progressive = \(stringFromBool(pagerTabStripViewController.pagerBehaviour.isProgressiveIndicator))  ElasticLimit = \(stringFromBool(pagerTabStripViewController.pagerBehaviour.isElasticIndicatorLimit))"
@@ -57,6 +58,6 @@ class ReloadExampleViewController: UIViewController {
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
 }

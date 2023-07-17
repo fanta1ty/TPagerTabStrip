@@ -1,22 +1,15 @@
 import UIKit
 
 public enum PagerScroll {
-    case no
-    case yes
-    case scrollOnlyIfOutOfScreen
+    case no, yes, scrollOnlyIfOutOfScreen
 }
 
 public enum SelectedBarAlignment {
-    case left
-    case center
-    case right
-    case progressive
+    case left, center, right, progressive
 }
 
 public enum SelectedBarVerticalAlignment {
-    case top
-    case middle
-    case bottom
+    case top, middle, bottom
 }
 
 open class ButtonBarView: UICollectionView {
@@ -119,7 +112,7 @@ open class ButtonBarView: UICollectionView {
     }
 
     private func contentOffsetForCell(withFrame cellFrame: CGRect, andIndex index: Int) -> CGFloat {
-        let sectionInset = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset // swiftlint:disable:this force_cast
+        let sectionInset = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset
         var alignmentOffset: CGFloat = 0.0
 
         switch selectedBarAlignment {

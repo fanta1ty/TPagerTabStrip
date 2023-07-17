@@ -4,8 +4,7 @@ import TPagerTabStrip
 class TwitterExampleViewController: TwitterPagerTabStripViewController {
     var isReload = false
 
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-
+    override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
         let child_1 = TableChildExampleViewController(style: .plain, itemInfo: "TableView")
         let child_2 = ChildExampleViewController(itemInfo: "View")
         let child_3 = TableChildExampleViewController(style: .grouped, itemInfo: "TableView 2")
@@ -32,7 +31,8 @@ class TwitterExampleViewController: TwitterPagerTabStripViewController {
         return Array(childViewControllers.prefix(Int(nItems)))
     }
 
-    @IBAction func reloadTapped(_ sender: AnyObject) {
+    @IBAction
+    func reloadTapped(_: AnyObject) {
         isReload = true
         reloadPagerTabStripView()
     }

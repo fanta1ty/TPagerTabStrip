@@ -3,7 +3,12 @@ import UIKit
 
 open class BarView: UIView {
     open lazy var selectedBar: UIView = { [unowned self] in
-        let selectedBar = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
+        let selectedBar = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: frame.size.width,
+            height: frame.size.height
+        ))
         return selectedBar
     }()
 

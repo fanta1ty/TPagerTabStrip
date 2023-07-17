@@ -2,7 +2,6 @@ import Foundation
 import TPagerTabStrip
 
 class SegmentedExampleViewController: SegmentedPagerTabStripViewController {
-
     var isReload = false
 
     required init?(coder aDecoder: NSCoder) {
@@ -13,7 +12,7 @@ class SegmentedExampleViewController: SegmentedPagerTabStripViewController {
 
     // MARK: - PagerTabStripDataSource
 
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
         let child_1 = TableChildExampleViewController(style: .plain, itemInfo: "Table View")
         let child_2 = ChildExampleViewController(itemInfo: "View")
         let child_3 = TableChildExampleViewController(style: .grouped, itemInfo: "Table View 2")
@@ -37,7 +36,8 @@ class SegmentedExampleViewController: SegmentedPagerTabStripViewController {
         return Array(childViewControllers.prefix(Int(nItems)))
     }
 
-    @IBAction func reloadTapped(_ sender: UIBarButtonItem) {
+    @IBAction
+    func reloadTapped(_: UIBarButtonItem) {
         isReload = true
         pagerBehaviour = .common(skipIntermediateViewControllers: arc4random() % 2 == 0)
         reloadPagerTabStripView()

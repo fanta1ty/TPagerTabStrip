@@ -8,20 +8,20 @@ class NavButtonBarExampleViewController: ButtonBarPagerTabStripViewController {
         // set up style before super view did load is executed
         settings.style.buttonBarBackgroundColor = .clear
         settings.style.selectedBarBackgroundColor = .orange
-        //-
+        // -
         super.viewDidLoad()
 
         buttonBarView.removeFromSuperview()
         navigationController?.navigationBar.addSubview(buttonBarView)
 
-        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, _: CGFloat, changeCurrentIndex: Bool, animated: Bool) in
             guard changeCurrentIndex == true else { return }
 
             oldCell?.label.textColor = UIColor(white: 1, alpha: 0.6)
             newCell?.label.textColor = .white
 
             if animated {
-                UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                UIView.animate(withDuration: 0.1, animations: { () in
                     newCell?.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                     oldCell?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                 })
@@ -34,7 +34,7 @@ class NavButtonBarExampleViewController: ButtonBarPagerTabStripViewController {
 
     // MARK: - PagerTabStripDataSource
 
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
         let child_1 = TableChildExampleViewController(style: .plain, itemInfo: "Table View")
         let child_2 = ChildExampleViewController(itemInfo: "View")
         let child_3 = TableChildExampleViewController(style: .grouped, itemInfo: "Table View 2")
@@ -64,7 +64,7 @@ class NavButtonBarExampleViewController: ButtonBarPagerTabStripViewController {
     override func reloadPagerTabStripView() {
         isReload = true
         if arc4random() % 2 == 0 {
-            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0 )
+            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0)
         } else {
             pagerBehaviour = .common(skipIntermediateViewControllers: arc4random() % 2 == 0)
         }

@@ -9,18 +9,13 @@ class BarExampleViewController: BarPagerTabStripViewController {
     }
 
     override func viewDidLoad() {
-
-        // set up style before super view did load is executed
         settings.style.selectedBarBackgroundColor = .orange
-        // - 
-
         super.viewDidLoad()
     }
 
     // MARK: - PagerTabStripDataSource
 
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-
+    override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
         let child_1 = TableChildExampleViewController(style: .plain, itemInfo: "Table View")
         let child_2 = ChildExampleViewController(itemInfo: "View")
         let child_3 = TableChildExampleViewController(style: .grouped, itemInfo: "Table View 2")
@@ -45,7 +40,7 @@ class BarExampleViewController: BarPagerTabStripViewController {
     override func reloadPagerTabStripView() {
         isReload = true
         if arc4random() % 2 == 0 {
-            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0 )
+            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0)
         } else {
             pagerBehaviour = .common(skipIntermediateViewControllers: arc4random() % 2 == 0)
         }

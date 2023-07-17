@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.platform = :ios, '11.0'
   s.source_files = 'Sources/TPagerTabStrip/**/*.{h,m,swift}'
   s.swift_version = '5.0'
-  s.resource_bundles = { 'TPagerTabStrip' => ['Sources/TPagerTabStrip/Resources/ButtonCell.xib'] }
+  s.resource_bundles = { 'TPagerTabStrip' => ['Sources/TPagerTabStrip/Views/ButtonCell.xib'] }
   s.ios.frameworks = 'UIKit', 'Foundation'
 end

@@ -2,7 +2,6 @@ import Foundation
 import TPagerTabStrip
 
 class ChildExampleViewController: UIViewController, IndicatorInfoProvider {
-
     var itemInfo: IndicatorInfo = "View"
 
     init(itemInfo: IndicatorInfo) {
@@ -10,7 +9,7 @@ class ChildExampleViewController: UIViewController, IndicatorInfoProvider {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -30,7 +29,7 @@ class ChildExampleViewController: UIViewController, IndicatorInfoProvider {
 
     // MARK: - IndicatorInfoProvider
 
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return itemInfo
+    func indicatorInfo(for _: PagerTabStripViewController) -> IndicatorInfo {
+        itemInfo
     }
 }

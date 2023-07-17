@@ -36,7 +36,7 @@ public struct IndicatorInfo {
     }
 }
 
-// MARK: ExpressibleByStringLiteral
+// MARK: - ExpressibleByStringLiteral
 
 extension IndicatorInfo: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {

@@ -2,19 +2,18 @@ import Foundation
 import TPagerTabStrip
 
 class ButtonBarExampleViewController: ButtonBarPagerTabStripViewController {
-
     var isReload = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         buttonBarView.selectedBar.backgroundColor = .orange
-        buttonBarView.backgroundColor = UIColor(red: 7/255, green: 185/255, blue: 155/255, alpha: 1)
+        buttonBarView.backgroundColor = UIColor(red: 7 / 255, green: 185 / 255, blue: 155 / 255, alpha: 1)
     }
 
     // MARK: - PagerTabStripDataSource
 
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
         let child_1 = TableChildExampleViewController(style: .plain, itemInfo: "Table View")
         let child_2 = ChildExampleViewController(itemInfo: "View")
         let child_3 = TableChildExampleViewController(style: .grouped, itemInfo: "Table View 2")
@@ -44,7 +43,7 @@ class ButtonBarExampleViewController: ButtonBarPagerTabStripViewController {
     override func reloadPagerTabStripView() {
         isReload = true
         if arc4random() % 2 == 0 {
-            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0 )
+            pagerBehaviour = .progressive(skipIntermediateViewControllers: arc4random() % 2 == 0, elasticIndicatorLimit: arc4random() % 2 == 0)
         } else {
             pagerBehaviour = .common(skipIntermediateViewControllers: arc4random() % 2 == 0)
         }
