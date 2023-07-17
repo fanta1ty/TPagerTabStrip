@@ -1,4 +1,4 @@
-![Logo](https://github.com/fanta1ty/TAlertView/blob/master/Logo/Logo.png)
+![Logo](https://github.com/fanta1ty/TPagerTabStrip/blob/master/Logo/Logo.png)
 # TPagerTabStrip
 
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-brightgreen)](https://developer.apple.com/swift/)
