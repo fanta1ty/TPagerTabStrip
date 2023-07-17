@@ -1,6 +1,16 @@
 import Foundation
 import UIKit
 
+public struct BarPagerTabStripSettings {
+    public struct Style {
+        public var barBackgroundColor: UIColor?
+        public var selectedBarBackgroundColor: UIColor?
+        public var barHeight: CGFloat = 5 // barHeight is ony set up when the bar is created programatically and not using storyboards or xib files.
+    }
+
+    public var style = Style()
+}
+
 open class BarPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate {
     public var settings = BarPagerTabStripSettings()
 

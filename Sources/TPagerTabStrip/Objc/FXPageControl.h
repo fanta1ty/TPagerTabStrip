@@ -66,5 +66,9 @@ IB_DESIGNABLE @interface FXPageControl : UIControl
 - (UIColor *)pageControl:(FXPageControl *)pageControl selectedColorForDotAtIndex:(NSInteger)index;
 
 @end
+
+
 NS_ASSUME_NONNULL_END
+
+
 #pragma clang diagnostic pop

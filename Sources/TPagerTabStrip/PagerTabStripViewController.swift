@@ -1,6 +1,26 @@
 import Foundation
 import UIKit
 
+// MARK: Protocols
+
+public protocol IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo
+}
+
+public protocol PagerTabStripDelegate: AnyObject {
+    func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int)
+}
+
+public protocol PagerTabStripIsProgressiveDelegate: PagerTabStripDelegate {
+    func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool)
+}
+
+public protocol PagerTabStripDataSource: AnyObject {
+    func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController]
+}
+
+// MARK: PagerTabStripViewController
+
 open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet public var containerView: UIScrollView!
 

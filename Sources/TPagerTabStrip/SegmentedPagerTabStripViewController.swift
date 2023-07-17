@@ -1,6 +1,14 @@
 import Foundation
 import UIKit
 
+public struct SegmentedPagerTabStripSettings {
+    public struct Style {
+        public var segmentedControlColor: UIColor?
+    }
+
+    public var style = Style()
+}
+
 open class SegmentedPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripDelegate {
     @IBOutlet public var segmentedControl: UISegmentedControl!
 
@@ -44,7 +52,7 @@ open class SegmentedPagerTabStripViewController: PagerTabStripViewController, Pa
     func reloadSegmentedControl() {
         segmentedControl.removeAllSegments()
         for (index, item) in viewControllers.enumerated() {
-            let child = item as! IndicatorInfoProvider
+            let child = item as! IndicatorInfoProvider // swiftlint:disable:this force_cast
             if let image = child.indicatorInfo(for: self).image {
                 segmentedControl.insertSegment(with: image, at: index, animated: false)
             } else {

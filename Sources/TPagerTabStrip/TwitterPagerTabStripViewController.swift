@@ -1,9 +1,46 @@
 import Foundation
 import UIKit
-
 #if SWIFT_PACKAGE
     import FXPageControl
 #endif
+
+extension UIWindow {
+    static var isLandscape: Bool {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows
+                .first?
+                .windowScene?
+                .interfaceOrientation
+                .isLandscape ?? false
+        } else {
+            return UIApplication.shared.statusBarOrientation.isLandscape
+        }
+    }
+
+    static var isPortrait: Bool {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows
+                .first?
+                .windowScene?
+                .interfaceOrientation
+                .isPortrait ?? false
+        } else {
+            return UIApplication.shared.statusBarOrientation.isPortrait
+        }
+    }
+}
+
+public struct TwitterPagerTabStripSettings {
+    public struct Style {
+        public var dotColor = UIColor(white: 1, alpha: 0.4)
+        public var selectedDotColor = UIColor.white
+        public var portraitTitleFont = UIFont.systemFont(ofSize: 18)
+        public var landscapeTitleFont = UIFont.systemFont(ofSize: 15)
+        public var titleColor = UIColor.white
+    }
+
+    public var style = Style()
+}
 
 open class TwitterPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate {
     open var settings = TwitterPagerTabStripSettings()
@@ -139,12 +176,12 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
         childTitleLabels.forEach { $0.removeFromSuperview() }
         childTitleLabels.removeAll()
         for (index, item) in viewControllers.enumerated() {
-            let child = item as! IndicatorInfoProvider
+            let child = item as! IndicatorInfoProvider // swiftlint:disable:this force_cast
             let indicatorInfo = child.indicatorInfo(for: self)
             let navTitleLabel: UILabel = {
                 let label = UILabel()
                 label.text = indicatorInfo.title
-                label.font = UIApplication.shared.statusBarOrientation.isPortrait ? settings.style.portraitTitleFont : settings.style.landscapeTitleFont
+                label.font = UIWindow.isPortrait ? settings.style.portraitTitleFont : settings.style.landscapeTitleFont
                 label.textColor = settings.style.titleColor
                 label.alpha = 0
                 return label
@@ -158,7 +195,7 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
 
     private func setNavigationViewItemsPosition(updateAlpha: Bool) {
         guard let distance = distanceValue else { return }
-        let isPortrait = UIApplication.shared.statusBarOrientation.isPortrait
+        let isPortrait = UIWindow.isPortrait
         let navBarHeight: CGFloat = navigationController!.navigationBar.frame.size.height
         for (index, label) in childTitleLabels.enumerated() {
             if updateAlpha {
