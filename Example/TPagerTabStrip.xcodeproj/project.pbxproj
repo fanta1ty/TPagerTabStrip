@@ -62,6 +62,7 @@
 		6F508015D1C56413855AA119 /* Pods-TPagerTabStrip_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPagerTabStrip_Example.release.xcconfig"; path = "Target Support Files/Pods-TPagerTabStrip_Example/Pods-TPagerTabStrip_Example.release.xcconfig"; sourceTree = "<group>"; };
 		80181BD14BA39B70F39505FC /* Pods_TPagerTabStrip_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPagerTabStrip_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2ED42F993E0DF6088784B8 /* Pods-TPagerTabStrip_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPagerTabStrip_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TPagerTabStrip_Tests/Pods-TPagerTabStrip_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD2834792A6E3EC8004882F5 /* FXPageControl.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = FXPageControl.podspec; path = ../FXPageControl.podspec; sourceTree = "<group>"; };
 		CDD1718C2A6510AE0021F913 /* BarExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarExampleViewController.swift; sourceTree = "<group>"; };
 		CDD1718D2A6510AE0021F913 /* NavButtonBarExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavButtonBarExampleViewController.swift; sourceTree = "<group>"; };
 		CDD1718E2A6510AE0021F913 /* ButtonBarExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarExampleViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				CD2834792A6E3EC8004882F5 /* FXPageControl.podspec */,
 				4A5AEFFA6044D68709BAB3C4 /* TPagerTabStrip.podspec */,
 				57E23A192A5625572F7E517E /* README.md */,
 				0F50A0BDA972F11DF550857C /* LICENSE */,
@@ -396,10 +398,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TPagerTabStrip_Example/Pods-TPagerTabStrip_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FXPageControl/FXPageControl.framework",
 				"${BUILT_PRODUCTS_DIR}/TPagerTabStrip/TPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FXPageControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

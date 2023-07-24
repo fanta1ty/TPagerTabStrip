@@ -4,6 +4,7 @@ platform :ios, '11.0'
 
 target 'TPagerTabStrip_Example' do
   pod 'TPagerTabStrip', :path => '../'
+  pod 'FXPageControl', :path => '../'
 
   target 'TPagerTabStrip_Tests' do
     inherit! :search_paths

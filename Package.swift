@@ -11,18 +11,23 @@ let package = Package(
             name: "TPagerTabStrip",
             targets: ["TPagerTabStrip"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/Climbatize/FXPageControl.git",
-            .upToNextMajor(from: "1.5.1"))
-    ],
     targets: [
+        .target(
+            name: "FXPageControl",
+            dependencies: [],
+            path: "FXPageControl/Sources",
+            publicHeadersPath: "./"
+        ),
         .target(
             name: "TPagerTabStrip",
             dependencies: [
                 "FXPageControl"
             ],
             exclude: [
-                "ObjC"
+                "Info.plist"
+            ],
+            resources: [
+                .process("Sources")
             ]
         ),
         .testTarget(

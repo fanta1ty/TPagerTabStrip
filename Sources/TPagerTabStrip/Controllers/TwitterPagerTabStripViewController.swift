@@ -1,8 +1,6 @@
 import Foundation
 import UIKit
-#if SWIFT_PACKAGE
-    import FXPageControl
-#endif
+import FXPageControl
 
 extension UIWindow {
     static var isLandscape: Bool {
